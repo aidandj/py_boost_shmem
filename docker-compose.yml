@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  boost-shared-mem-parent:
+    build: .
+    container_name: "py_boost_shmem_cpp"
+    command: "./sharedmem_test"
+    # command: "tail -f /dev/null"
+    ipc: "shareable"
+  boost-shared-mem-child-python:
+    build: .
+    container_name: "py_boost_shmem_py"
+    # command: "python3 get_shared_mem_number.py"
+    command: "python shmem_py/shmem.py"
+    ipc: "container:py_boost_shmem_cpp"
+    depends_on: 
+      - "boost-shared-mem-parent"
