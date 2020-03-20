@@ -9,3 +9,7 @@ future as well as anyone else who may have this issue.
 
 This example was written along with a [corresponding stack overflow 
 question](https://stackoverflow.com/questions/31028012/access-a-boostinterprocess-shared-memory-block-from-python-with-ctypes)
+
+## aidandj's changes
+
+Made it work for Linux. But kinda hacky. Might do some clean-up later.
